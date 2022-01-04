@@ -1,0 +1,70 @@
+p{
+    border: inherit;
+    margin: inherit;
+    color: bisque;
+}
+/* Generally, borders and margins aren't inherited by the children tags. Only the text formatting
+gets inherited.
+But, we can override it, by adding these 'border: inherit;' , etc. tags  */
+/* 
+! If I insert say, two 'p' tags. And they have clashing fields, for example, top one has
+! color: red;, and the botton one has color: green;. Then, since CSS is read from top-to-botton
+* The top p tag will take the precededence, and hence, the color displayed will be red.
+*/
+
+p.errors{
+    color: red;
+}
+
+p.success{
+    color: rgb(4, 56, 4);
+    border: 5px  dotted rgb(44, 9, 43);
+}
+
+.errors{
+    color: aqua;
+}
+
+h1.errors{
+    color: greenyellow;
+}
+h2.errors{
+    color: orangered;
+}
+h3.errors{
+    color: goldenrod;
+}
+
+#paraid{
+    background-color: blueviolet;
+    padding: 40px;
+    border: 5px solid red;
+    font-size: 50px;
+    color: chartreuse;
+}
+
+div {
+    background-color: blanchedalmond;
+}
+
+
+a[href]{
+    background-color: brown;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+a[href="index.html"]{
+    background-color: grey;
+    text-transform: lowercase;
+}
+
+/* *= means, 'include', instead of a direct match */
+/* similarly, $= means, 'ends with', instead of 'include' */
+a[href*=google]     
+{
+    background-color: yellow;
+    color: red;
+    border: 2px solid blue;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>HTML Forms</title>
+</head>
+<body>
+    
+    <h1 id="webpageheading1">HTML Forms</h1>
+
+    <form action="">
+        <label for="username">Enter Your Username: <br> </label>
+        <input type="text" id="username" name="username" placeholder="Enter the value">
+        <hr>
+        <label for="email">Enter Email: <br> </label>
+        <input type="email" id="email" name="email" placeholder="Enter the value" required>
+        <hr>
+        <label for="password">Enter Password: <br> </label>
+        <input type="password" id="password" name="password" placeholder="Enter the value" required>
+        <hr>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender2" value="other1"> Other1<br>
+        <input type="radio" name="gender2" value="other2"> Other2<br>
+        <p><b>NOTE:</b>When a user clicks on a radio--button, it becomes checked, and all the other
+        radio buttons with the same 'name' become unchecked.</p>
+        <hr>
+        <input type="radio" name="age" value="0-25" id="option-1">
+        <label for="options-1">0-25</label>
+        <br>
+        <input type="radio" name="age" value="25-50" id="option-2">
+        <label for="options-2">25-50</label>
+        <br>
+        <input type="radio" name="age" value=">50" id="option-3">
+        <label for="options-2">>50</label>
+        <hr><br><hr>
+        <label for="question">Security Question:</label>
+        <select name="question" id="question">
+            <option value="q1">What colour are your favourite pair of socks?</option>
+            <option value="q2">If you could be a vegetable, which one would it be?</option>
+            <option value="q3">What is the best security question ever?</option>
+            <option value="q4">What colour are your favourite pair of socks?</option>
+        </select>
+        <br><br>
+        <label for="answer">Security Question Answer:</label>
+        <input type="text" id="answer" name="answer">
+        <hr><br><hr>
+        <label for="bio">Enter your Bio:</label><br>
+        <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter your bio..."></textarea>
+        <br>
+        <input type="submit" value="Submit the Form">
+    </form>
+
+</body>
+</html>
