@@ -5,23 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background: #eee;
+        }
+        form{
+            max-width: 200px;
+            margin: 40px auto;
+            background: white;
+            padding: 4px;
+        }
+        input{
+            display: block;
+            margin: 10px auto;
+            padding: 4px;
+        }
+        .success{
+            border: 5px solid lightgreen;
+        }
+        .error{
+            border: 5px solid crimson;
+        }
+    </style>
+
     <title>Chapter 7</title>
 </head>
 
 <body>
-    <h1 id="page-title">The DOM</h1>
-
-    <div>
-    <p>Hello, world!!</p>
-    <p>Lorem Ipsum</p>
-    <p class="error">This is an error message</p>
-    </div>
-
-    <div class="error">This is another error</div>
-
-    <div class="content">
-        <p>This is the Content.</p>
-    </div>
+    
+    <form action="" class="signup-form">
+        <input type="text" id="username" placeholder="username">
+        <input type="submit" value="submit">
+        <div class="feedback"></div>
+    </form>
 
     <script src="sandbox.js"></script>
 </body>
