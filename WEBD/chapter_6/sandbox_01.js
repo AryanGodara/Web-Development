@@ -1,8 +1,8 @@
 //? Query Selector
 
 // Store our reference to our variable in some kind of element
-const para = document.querySelector('p');   // Hover on querySelector for info
-console.log(para);
+const para1 = document.querySelector('p');   // Hover on querySelector for info
+console.log(para1);
 
 // Now, if we want to select a particular tab, we can use its 'class name'
 const para2 = document.querySelector('.error'); // Grabs the first tag w/ class 'error'
@@ -22,7 +22,7 @@ const heading1 = document.querySelector('body > h1');
 console.log(heading1);
 
 // Now, if we want to grab mutliple elements?
-const paras = document.querySelectorAll('p');   // Stores all of the paragraphs
+var paras = document.querySelectorAll('p');   // Stores all of the paragraphs
 console.log(paras); // paras is a NodeList, not any ordinary array
 for ( let i = 0 ; i < paras.length ; i++ )
     console.log(paras[i]);
@@ -53,3 +53,44 @@ const paraselect = document.getElementsByTagName('p');
 console.log(paraselect);
 const titselect = document.getElementsByTagName('title');
 console.log(titselect); // Even if there is just one element, it's still stored in an HTMLCollection
+
+
+
+
+//? Adding and Changing Page Content
+
+const para = document.querySelector('p');     // Already defined earlier
+
+console.log(para.innerText);
+//! .innerText is a 'property', not a method. So, we don't use (). {Check django for 'property'}
+
+para.innerText = 'Ninjas are awesome';
+console.log(para.innerText);
+para.innerText += '!!!';
+console.log(para.innerText);
+console.log('\n');
+
+paras = document.querySelectorAll('p');     // Already defined earlier
+// Now, we can use 'forEach' to cycle through all the elements of a 'NodeList'.
+
+paras.forEach( para_element_var => {
+    console.log(para_element_var.innerText);
+    para_element_var.innerText += ' new text';
+    console.log(para_element_var.innerText);
+})
+
+const content1 = document.querySelector('.content');    // Query the 'div'
+console.log(content1.innerHTML);
+content1.innerHTML = '<h2>This is a new Heading2 Tag </H2><p>And this is a paragraph</p>';
+//! Use `` instead, to write multi-line strings.
+
+content1.innerHTML += ' just appended this lol.'
+
+console.log(content1.innerHTML);
+console.log(content1.innerHTML);
+
+const people = [ 'mario', 'luigi', 'yoshi' ];
+
+people.forEach( person => {
+    content1.innerHTML += `<li>${person}</li>`
+})
