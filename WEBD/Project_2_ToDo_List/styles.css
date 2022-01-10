@@ -1,0 +1,36 @@
+body {
+    background: #352f5b;
+}
+
+.container {
+    max-width: 400px;
+}
+
+input[type=text],
+input[type=text]:focus {
+    color: #fff;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+}
+
+.todos li {
+    background: #423a6f;
+}
+
+.delete {
+    cursor: pointer;
+}
+
+.check-btn {
+    color: #fff;
+    font-size: 2em;
+}
+
+.check-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.filtered {
+    display: none !important;
+}

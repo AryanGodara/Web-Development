@@ -22,12 +22,13 @@ form.addEventListener('submit', e => {
 
     // Show the result on the webpage
     // First, we scroll t othe top
-    window.scrollTo(0,0);      //! We don't need to right window
+    window.scrollTo(0,0);      //! We don't need to write window
 
-    result.classList.remove('d-none');
+    result.classList.remove('d-none');  //! This html code is no longer 'invisible' now.
 
     let output = 0;
 
+    //* To make the counter go from 0% to the required result.
     const timer = setInterval (() => {
         result.querySelector('span').textContent = `${output}%`; // Change 0% to the actual score
 
@@ -35,7 +36,7 @@ form.addEventListener('submit', e => {
             clearInterval(timer);   // Stop animating
         else
             output++;
-    }, 70);
+    }, 70 );
 });
 
 
