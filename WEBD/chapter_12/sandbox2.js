@@ -1,12 +1,12 @@
-const getTodos = (callback_var) => {    //? This parameter, is a function (a callback function)
+const getTodos = (callback_func) => {    //? This parameter, is a function (a callback function)
 
     const request = new XMLHttpRequest();
 
     request.addEventListener('readystatechange', () => {
         if ( request.readyState === 4 && request.status == 200 )
-            callback_var(undefined, request.responseText);          // In this case, there's no error
+            callback_func(undefined, request.responseText);          // In this case, there's no error
         else if ( request.readyState === 4)
-            callback_var('could not fetch data',undefined); // No 'data', due to the error
+            callback_func('could not fetch data',undefined); // No 'data', due to the error
     });
 
     request.open('GET','https://jsonplaceholder.typicode.com/todos/');

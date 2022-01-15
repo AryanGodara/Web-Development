@@ -57,7 +57,7 @@ request.send();
  * 
  * Value: 3
  * State: LOADING
- * Description: Downloading; responseText holds partial data.
+ * Description: Downloading: responseText holds partial data.
  * 
  * Value: 4
  * State: DONE
