@@ -89,6 +89,3 @@ const getCity = async (city) => {   // We take in the city name as the parameter
 //         console.log(data);
 //     })
 //     .catch( err => console.log(err));
-
-
-//? Now that we've tested things out, we need to 
