@@ -124,3 +124,19 @@ const direcUser = new Director('aryan', 'aryan@email.com', 'black-belt-ninja');
 // Passed an extra third parameter, not present in objects of class normalUser
 
 console.log(direcUser);
+
+
+//? Old way of doing, what classes do now
+
+function OldUser (username, email) {
+    this.username = username ;
+    this.email = email ;
+    this.login = function () {
+        console.log(`${this.username}`);
+    };
+}
+
+const old1 = new OldUser('mario','mario@email.com');
+const old2 = new OldUser('luigi','luigi@email.com');
+
+console.log(old1,old2);

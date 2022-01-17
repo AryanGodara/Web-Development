@@ -5,6 +5,9 @@ const details = document.querySelector('.details');
 const time = document.querySelector('img.time');    // img element with class 'time'
 const icon = document.querySelector('.icon img');   // div w/ class 'icon', then img inside that
 
+const forecast = new Forecast() ;
+
+
 
 // Function to update the UI
 const updateUI = (data) => {    // data is the 'object' containnig city details and city weather.
@@ -35,16 +38,16 @@ const updateUI = (data) => {    // data is the 'object' containnig city details 
 
 
 //? Function to take 'city name' as parameter, and return its details, and weather
-const updateCity = async (city) => {
+// const updateCity = async (city) => {
 
-    const city_details = await getCity(city);
-    const weather = await getWeather(city_details.Key);
+//     const city_details = await getCity(city);
+//     const weather = await getWeather(city_details.Key);
 
-    return {
-        city_details : city_details,
-        weather: weather
-    };
-};
+//     return {
+//         city_details : city_details,
+//         weather: weather
+//     };
+// };
 
 
 
@@ -56,7 +59,7 @@ cityForm.addEventListener( 'submit' , e => {
     cityForm.reset();
 
     // update the UI with the new city
-    updateCity(city)        // Returns an object
+    forecast.updateCity(city)        // Returns an object
         // .then( data => console.log(data))
         .then( data => updateUI(data) )     // Call the function to update the UI now
         .catch( err => console.log(err.messsage) );
@@ -67,9 +70,9 @@ cityForm.addEventListener( 'submit' , e => {
     // value, this helps us when user refreshes the page, user doesn't lose the prev result.
 });
 
-// console.log(localStorage.getItem('city'));
+// // console.log(localStorage.getItem('city'));
 if ( localStorage.getItem('city') ){
-    updateCity(localStorage.getItem('city'))        // Returns an object
+    forecast.updateCity(localStorage.getItem('city'))        // Returns an object
         .then( data => updateUI(data) )     // Call the function to update the UI now
         .catch( err => console.log(err.messsage) );
 }
