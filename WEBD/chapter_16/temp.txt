@@ -1,0 +1,45 @@
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAQCa278pm_eltD5NgNQLMVD7mrmz5UPek",
+    authDomain: "udemy-modern-javascript-88e4b.firebaseapp.com",
+    projectId: "udemy-modern-javascript-88e4b",
+    storageBucket: "udemy-modern-javascript-88e4b.appspot.com",
+    messagingSenderId: "425655884972",
+    appId: "1:425655884972:web:8aef30697823d245bc5309",
+    measurementId: "G-1H0V3JZYRV"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAQCa278pm_eltD5NgNQLMVD7mrmz5UPek",
+        authDomain: "udemy-modern-javascript-88e4b.firebaseapp.com",
+        projectId: "udemy-modern-javascript-88e4b",
+        storageBucket: "udemy-modern-javascript-88e4b.appspot.com",
+        messagingSenderId: "425655884972",
+        appId: "1:425655884972:web:8aef30697823d245bc5309",
+        measurementId: "G-1H0V3JZYRV"
+    };
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
+</script>

@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Chapter 16 Part 1</title>
+</head>
+<body>
+
+    <div class="container my-5">
+        <h2>Recipes</h2>
+        <ul>
+            <!-- <li>Mushroom Pie</li> -->
+            <!-- <li>Veg Curry</li> -->
+        </ul>
+        <form action="">
+            <label for="recipe">Add a new Recipe:</label>
+            <div class="innput-group">
+                <input type="text" class="form-control" id="recipe" placeholder="Enter Recipe" required>
+                <div class="input-group-append">
+                    <input type="submit" value="Add Recipe" class="btn btn-outline-secondary">
+                </div>
+            </div>
+        </form>
+
+        <button class="btn btn-danger btn-sm my-2">Unsubscribe from changes</button>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script>
+        // Import the functions you need from the SDKs you need
+        // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+        // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const config = {
+          apiKey: "AIzaSyAQCa278pm_eltD5NgNQLMVD7mrmz5UPek",
+          authDomain: "udemy-modern-javascript-88e4b.firebaseapp.com",
+          projectId: "udemy-modern-javascript-88e4b",
+          storageBucket: "udemy-modern-javascript-88e4b.appspot.com",
+          messagingSenderId: "425655884972",
+          appId: "1:425655884972:web:8aef30697823d245bc5309",
+          measurementId: "G-1H0V3JZYRV"
+        };
+      
+        // Initialize Firebase
+        // const app = initializeApp(firebaseConfig);
+        // const analytics = getAnalytics(app);
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+      </script>
+    <script src="sandbox.js"></script>
+</body>
+</html>
