@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title>Firebase 9</title>
+</head>
+<body>
+    
+    <h1>Getting started with Firebase 9</h1>
+
+    <h2>Firebase Firestore</h2>
+
+    <form class="add">
+        <p>
+        <label for="title">Title:</label>
+        <input for="text" name="title" required>
+        </p>
+        </p>
+        <p>
+        <label for="author">Author:</label>
+        <input for="text" name="author" required>
+        </p>
+
+        <button>Add a new Book</button>
+    </form>
+
+    <br><hr><br>
+
+    <form class="delete">
+        <p>
+        <label for="id">Document id:</label>
+        <input type="text" name="id" required>
+        </p>
+        </p>
+
+        <button>Delete a Book</button>
+    </form>
+
+    <br><hr><br>
+
+    <form class="update">
+        <p>
+        <label for="id">Document id:</label>
+        <input type="text" name="id" required>
+        </p>
+        <p>
+        <label for="title">Title:</label>
+        <input type="text" name="title" required>
+        </p>
+        <!-- <p>
+        <label for="author">Author:</label>
+        <input for="text" name="author" required>
+        </p> -->
+        <button>Update a Book</button>
+    </form>
+
+    <br><hr><br>
+
+    <h2>Firebase Auth</h2>
+    <br>
+
+    <form class="signup">
+        <p>
+        <label for="email">Email:</label>
+        <input type="text" name="email" required>
+        </p>
+        <p>
+        <label for="password">Title:</label>
+        <input type="password" name="password" required>
+        </p>
+       
+        <button>Sign-up</button>
+    </form>
+
+    <br><hr><br>
+
+    <form class="login">
+        <p>
+        <label for="email">Email:</label>
+        <input type="text" name="email" required>
+        </p>
+        <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+        </p>
+       
+        <button>Login</button>
+    </form>
+
+    <br><hr><br>
+
+    <button class="logout">Logout</button>
+
+    <br><hr><br>
+
+    <button class="unsub">Unsubscribe from db/auth changes</button>
+
+
+    <script src="bundle.js"></script>
+    <!-- We added bundle.js, as it 'bundles up', all all the code, from all of the specified
+    scripts, into a single app, i.e., 'bundle.js' -->
+</body>
+</html>

@@ -95,7 +95,7 @@ form.addEventListener( 'submit' , e => {
         console.log('recipe added:', recipe);
     }).catch( err => console.log(err) );
 
-    // .add() also returns a promise (aync function), so we use .then(), w/o any parameters, as
+    // .add() also returns a promise (aaync function), so we use .then(), w/o any parameters, as
     // we're not 'getting' anything from the database, rather, we're uploading things to the db.
 
 });
@@ -112,7 +112,7 @@ list.addEventListener( 'click' , e =>{
         const id = e.target.parentElement.getAttribute('data-id');
         // console.log(id);
         // db.collection("recipes").doc(id);   // To get a refernce to the document with this id
-        db.collection("recipes").doc(id).delete()  // Then delete it: .delete() = aync function
+        db.collection("recipes").doc(id).delete()  // Then delete it: .delete() = async function
             .then( console.log('recipe delete') );
     }
 } );

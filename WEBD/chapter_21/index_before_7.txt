@@ -1,0 +1,111 @@
+import { initializeApp } from 'firebase/app'
+import {
+    getFirestore, collection, getDocs,
+    addDoc, deleteDoc, doc,
+    onSnapshot
+} from 'firebase/firestore'
+
+const firebaseConfig = {
+    apiKey: "AIzaSyAngTEgkqwfdfzkhbSVsDIF5Hz5mWmPPJ8",
+    authDomain: "fir-9-dojo-da94f.firebaseapp.com",
+    projectId: "fir-9-dojo-da94f",
+    storageBucket: "fir-9-dojo-da94f.appspot.com",
+    messagingSenderId: "883265232155",
+    appId: "1:883265232155:web:f452536ffce4af324247be"
+};
+
+/*
+    // We need to connect to the Firebase Project on the backend, from the frontend, using this object
+    // right her 'firebaseConfig'
+    //TODO: The first step in doing that, is installing 'firebase'
+    //* Now thta firebase is installed, we can go ahead and use it to conect ot the firebase backend.
+*/
+//! Remember npm run build            command, if in case, you close this window
+
+
+// init firebarse app
+initializeApp(firebaseConfig);  // This line connects us to our firebase backend
+
+    /*
+    * //? Before jumping into the ver9 syntax, let's see how we did things with ver8
+    * import firebase from 'firebase/app'
+    * // So, if I wanted ot initialize the app or the connection to the firebase backend, i'd say :-
+    * firebase.initializeApp('firebaseConfig');
+    * // We passed in the 'firebaseConfig object, so that it knew which project to connect to.
+    */
+    //TODO: Now, in version 9, we don't do this. We just import the functions that we need to use from
+    //TODO: the library. In this case, the function that we need to use is 'initializeApp'. So, instead
+    //TODO: of the whole module, we only import the single function.
+    //TODO: And so, we don't need to call 'firebase'.initializeApp, as we can just call 'initializeApp'
+
+
+
+//? init services
+const db = getFirestore();
+    // 'db' represents our database connection, which we're storing in this constant now
+
+//? collection ref    : Get a reference to on one of the collections in our database (db)
+const colRef = collection(db, 'books');
+
+//? get collection data
+// getDocs(colRef)
+//     .then( (snapshot) => {  // the param 'snapshot' has access to all the documents of the collection
+//         console.log(snapshot);
+//         // console.log('\n');
+//         // console.log(snapshot.docs);
+//         // snapshot.docs.forEach( element => console.log(element.data()) ) ;
+
+//         let books = [] ;        // Initialize an empty array
+
+//         snapshot.docs.forEach( doc => { 
+//             books.push( { ...doc.data() , id:doc.id } )
+//         });
+
+//         console.log(books) ;
+//     })
+//     .catch ( err => console.log(err.message) ) ;    // In case there's an error
+
+//? Now, we want to make it real-time
+
+onSnapshot(colRef, snapshot => {  // This function fire everytime there's a change in the collection
+    let books = [] ;        // Initialize an empty array
+
+    snapshot.docs.forEach( doc => { 
+        books.push( { ...doc.data() , id:doc.id } )
+    });
+
+    console.log(books) ;
+});
+
+//? Adding Documents
+const addBookForm = document.querySelector('.add');
+addBookForm.addEventListener ( 'submit' , e => {
+    e.preventDefault();
+
+    addDoc(colRef, {
+        title: addBookForm.title.value ,
+        author: addBookForm.author.value,
+    })
+    .then ( () => {
+        addBookForm.reset();
+        //* addDoc returns a 'promise', so we use 'then' to empty the input fields after submitting
+    })
+});
+
+//? Deleting Documents
+const deleteBookForm = document.querySelector('.delete');
+deleteBookForm.addEventListener( 'submit' , e => {
+    e.preventDefault();
+    console.log('delete clicked');
+
+    const docRef = doc(db, 'books', deleteBookForm.id.value);
+
+    deleteDoc(docRef)
+        .then( () => {
+            deleteBookForm.reset() ;
+        });
+});
+
+
+
+//? Firestore Queries
