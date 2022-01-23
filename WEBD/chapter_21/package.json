@@ -1,0 +1,21 @@
+{
+  "name": "chapter_21",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "//": "So, when we run this script, it'll run the webpack command. And that will automatically look for our webpack configuratino file (webpack.config.js), and then, run webpack accordig to our configuration."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "firebase": "^9.6.3"
+  }
+}
