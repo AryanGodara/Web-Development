@@ -10,6 +10,78 @@
 </head>
 <body>
     
+    <!-- Container and Title -->
+    <div class="container my-4">
+
+        <h1 class="my-4 text-center">Ninja Chat</h1>
+    
+        <!-- Buttons for Chatroom -->
+        <div class="chat-rooms mb-3 text-center">
+            <div class="my-2">Choose a Chatroom</div>
+            <button class="btn" id="general">#general</button>
+            <button class="btn" id="gaming">#gaming</button>
+            <button class="btn" id="music">#music</button>
+            <button class="btn" id="ninjas">#ninjas</button>
+        </div>
+    
+        <!-- Chat List/Window -->
+        <div class="chat-window">
+            <ul class="chat-list list-group"></ul>
+        </div>
+    
+        <!-- New Chat Form -->
+        <form class="new-chat my-3">
+            <div class="input-group">
+                <div class="input-group-text">Your Message:</div>
+
+                <input type="text" class="form-control" id="message" required>
+
+                <div class="input-group-append">
+                    <input type="submit" class="btn" value="send">
+                </div>
+            </div>
+        </form>
+
+        <!-- Update Name Form -->
+        <form class="new-name my-3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Update Name:</div>
+                </div>
+
+                <input type="text" class="form-control" id="name" required>
+
+                <div class="input-group-append">
+                    <input type="submit" class="btn" value="update">
+                </div>
+            </div>
+
+            <div class="update-mssg"></div>
+        </form>
+
+    </div>
+    
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const config = {
+          apiKey: "AIzaSyAQCa278pm_eltD5NgNQLMVD7mrmz5UPek",
+          authDomain: "udemy-modern-javascript-88e4b.firebaseapp.com",
+          projectId: "udemy-modern-javascript-88e4b",
+          storageBucket: "udemy-modern-javascript-88e4b.appspot.com",
+          messagingSenderId: "425655884972",
+          appId: "1:425655884972:web:cb59f2840499ed24bc5309",
+          measurementId: "G-4KTEL9QTFR"
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+      </script>
 
     <script src="scripts/chat.js"></script>
     <script src="scripts/ui.js"></script>
