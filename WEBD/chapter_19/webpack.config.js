@@ -20,5 +20,18 @@ module.exports = {
         devMiddleware: {
             publicPath: "/assets/"
         }
+    },
+    module: {           //* We use this to make sure all the files first run through babel, to be converted into 'non-modern javascript', so that they can run on all the web browsers
+        rules: [{
+            test: /\.js$/ ,       //* We want files that end with .js
+            //? test is a 'regular expression, describing the files on which we want to run babel-loader
+            exclude: /node_modules/ ,    //* exclude anything inside the nodu_modules directory
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                }
+            }
+        }]
     }
 };
