@@ -32,6 +32,11 @@ module.exports = {
                     presets: ['@babel/preset-env']
                 }
             }
-        }]
+        },
+    {
+        test: /\.css$/ ,
+        use: ['style-loader' , 'css-loader']    //? Order is important here, as it runs from right-to-left. So, first the css-loader is loaded, and then the style-loader
+    }
+    ]
     }
 };

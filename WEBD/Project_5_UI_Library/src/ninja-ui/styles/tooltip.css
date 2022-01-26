@@ -1,0 +1,37 @@
+.tooltip {
+    position: relative;
+    display: inline-block;
+    color: #ff6565;
+    border-bottom: 1px dotted#ff6565;
+    cursor: help;
+}
+.tip{                   /* When the only class is tip */
+    visibility: hidden;
+    width: 150px;
+    background-color: #ff6565;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px 0;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tip.active{        /* When both tip active classes are there, so we only change the two options that will be different, ie., opacity and visibility */
+    visibility: visible;
+    opacity: 1;
+}
+.tip::after{        /* ::after is a pseudo class that let's us enter some content after the 'tip' element */
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    margin-left: -4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #ff6565;
+}
